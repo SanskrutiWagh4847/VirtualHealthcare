@@ -1,0 +1,23 @@
+.todayCard{
+    border-radius: 20px;
+   box-shadow: blue;
+   width: max-content;
+   padding: 2px;
+    
+}
+
+.todayCard:hover{
+    background-color: #eef4fe;
+}
+
+.button{
+    border-radius: 20px;
+    background-color: #202B6D;
+    color: white;
+    margin-right: 10px;
+}
+
+.keyColor{
+    color:#202B6D ;
+    font-weight: bold;
+}

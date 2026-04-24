@@ -1,0 +1,46 @@
+input {
+    border: 0
+}
+
+textarea{
+    border: 0;
+   
+}
+
+.gradcard {
+    background-image: linear-gradient(to bottom right, rgba(242, 242, 247, 0.178), #9ae4b3);
+  
+  }
+
+.CardHover:hover { 
+    border-bottom: 6px solid rgb(227, 227, 240);
+    transform: scale(1.1);
+    transition-duration: 0.5 s;
+    transition-timing-function: linear;
+}
+
+.text-navy{
+    color: navy;
+}
+
+.btn-navy{
+    background-color: navy;
+    color: white;
+}
+
+.round-button{
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.table-responsive{
+    overflow-x: auto;
+}
+
+.dashboard-card{
+    width: 16rem;
+}
+
+.excelsheet{
+    background-color: navy;
+}

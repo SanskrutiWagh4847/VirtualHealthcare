@@ -1,0 +1,10 @@
+.textcolor{
+    color:white;
+    
+}
+.cardbg{
+    background-color: rgb(120, 201, 221);
+}
+.gradcard {
+    background-image: linear-gradient(to bottom right, rgba(203, 203, 221, 0.178), #5ccfe450); 
+  }

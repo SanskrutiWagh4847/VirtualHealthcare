@@ -1,0 +1,36 @@
+.title{
+    margin-top: 50px;
+}
+
+.notwell{
+    background-color: F5F5F5
+}
+
+
+.notwell:hover { 
+    box-shadow: 40px 40px 60px -20px rgba(12, 5, 62, 0.15);
+    /* z-index: 100; */
+    
+    }
+
+.hr-tag{
+   
+    height:10px;
+    border-width:0;
+    color:gray;
+    background-color:gray
+}
+
+.services{
+    border-radius: 20px;
+   width: 20rem;
+    
+}
+
+div.justify{
+    justify-content: center;
+}
+
+.footer{
+   color: white;
+}

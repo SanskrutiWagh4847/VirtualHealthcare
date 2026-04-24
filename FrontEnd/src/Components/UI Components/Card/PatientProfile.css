@@ -1,0 +1,21 @@
+.patientcard{
+    border-radius: 2rem;
+   width: 20rem;
+   box-shadow: blue;
+}
+
+.patientcard:hover{
+    background-color: #eef4fe;
+}
+
+.button{
+    border-radius: 2rem;
+    background-color: #202B6D;
+    color: white;
+    margin-right: 10px;
+}
+
+.keyColor{
+    color:#202B6D ;
+    font-weight: bold;
+}

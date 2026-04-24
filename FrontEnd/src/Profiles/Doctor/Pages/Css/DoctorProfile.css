@@ -1,0 +1,26 @@
+.inp {
+    border: none;
+    border-bottom: 1px solid #afb0b1;
+    padding: 5px 10px;
+    outline: none;
+    font-size: 18px;
+    
+  
+  }
+  
+  [placeholder]:focus::-webkit-input-placeholder {
+    transition: text-indent 0.4s 0.4s ease;
+    text-indent: -100%;
+    opacity: 1;
+  
+  }
+
+  .gradcard {
+    background-image: linear-gradient(to bottom right, rgba(254, 254, 255, 0.178), #cadff7);
+  
+  }
+  .shad{
+  color: rgb(8, 8, 8);
+  text-shadow: 2px 2px 4px #9696b9;
+  }
+ 

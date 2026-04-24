@@ -1,0 +1,23 @@
+.valid{
+    color:blue;
+    font-weight: normal;
+}
+.button{
+    border-radius: 20px;
+background-color: #202B6D;
+  }
+
+  .button:hover{
+    color: white;
+  }
+.init{
+    color:rgb(145, 103, 103);
+    font-weight: normal;
+}
+.invalid
+{
+    color: #bb2a2a;
+    font-size: 15xp;
+    font-weight: lighter;
+    font-style: oblique;
+}

@@ -1,0 +1,20 @@
+.gradcard {
+    background-image: linear-gradient(to bottom right, rgba(254, 254, 255, 0.178), #cadff7);
+  }
+  
+  .imgsize{
+    height: "200px"; width: "200px";
+  }
+  .cardwidth{
+    width: 18rem;
+  }
+  .cardHover:hover { 
+    border-bottom: 10px solid #0e165f; 
+    transform: scale( 1.1);
+
+    transition-duration: 0.5 s;
+  transition-timing-function: linear;
+    
+    }
+
+

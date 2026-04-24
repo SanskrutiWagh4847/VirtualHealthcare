@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.alert{
+  color: red;
+  font-weight: bolder;
+  margin-top: 10px;
+ 
+}
+
+.span1{
+  color: #202B6D;
+  font-weight: bolder;   
+}
+
+.slide{
+  margin: 50px;
+}
+
+.slider-col{
+  margin-top: 50px;
+}
+
+.what-img{
+  size: 10px;
+}
+
+.para{
+  font-size: large;
+}
+
+.cards{
+  width: 70rem;
+  margin-right: 20px;
+}
+
+.contagion{
+  width: 20rem;
+}
+
+.cardHover:hover { 
+  border-bottom: 5px solid #ff0505;
+  
+  }
+
+  .symptm-img{
+    margin: 20px;
+     padding : 30px; 
+     max-width: 50rem;
+  }
+
+  .numberCircle {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    padding: 5px;
+  
+    background: #c2c2f1;
+    border: none;
+    color: #0d1129;
+    text-align: center;
+    font-weight: bold;
+    font: 20px  Arial, sans-serif;
+  }
+
+  iframe{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* card-background */
+
+  /* .cardbackground{
+    background-image: url('./Assets/SVG/cardBack.svg') no-repeat;
+   
+
+  } */

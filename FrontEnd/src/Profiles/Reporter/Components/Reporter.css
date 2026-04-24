@@ -1,0 +1,79 @@
+.tablesheet{
+    background-color: white;
+    border: 1px solid gray;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    
+}
+.tablesheet th,td{
+    border: 1px solid  gray ;
+    padding: 10px 10px;
+}
+
+@media (max-width:768px) { 
+    .hide{
+        display: none;
+     
+    }
+}
+@media (max-width:576px) { 
+    .hidephone{
+        display: none;
+       
+     
+    }
+    .textsize{
+        font-size: 10px;
+    }
+}
+
+  .dropdown_button:hover{
+    transform: scale(1.2);
+    font-weight: bold;
+}
+.dropdown:hover{
+    color: #FFF;
+    transform: scale(1.2);
+}
+.hilight:hover{
+    background: rgba(173, 228, 159, 0.486);
+}
+
+.hilight2{
+    background: rgba(165, 168, 165, 0.438);
+}
+
+.hilightleave:hover{
+    background: rgba(241, 174, 202, 0.274);
+}
+
+
+
+.tableheadind{
+    color: rgb(65, 141, 46);
+}
+.back{
+    background: rgb(0,0,99);
+    color: white;
+}
+.tableleave{
+    color: rgb(240, 62, 62);
+   
+}
+
+.pie {
+  
+    /* background: red;
+    position: relative; */
+    animation-timing-function:ease-out ;
+    animation: myfirst 1.3s ;
+   
+  }
+@keyframes myfirst {
+    0%   {transform:  scale(0.1);opacity: 0.1; }
+    /* 25%  { transform: scale(0.3);opacity: 0.3 }
+    50%  { transform: scale(0.5);opacity: 0.5 }
+    75%  { transform: scale(0.8);opacity: 0.8 } */
+    100% { transform: scale(1.0);opacity: 1.0 }
+  }
