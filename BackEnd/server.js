@@ -37,7 +37,12 @@ app.use('/api/contact', Contact);
 // Port
 const PORT = process.env.PORT || 5000;
 
+dotenv.config();
 // Run server
+app.get("/", (req, res) => {
+  res.status(200).send("Backend is running successfully 🚀");
+});
+
 app.listen(PORT, () => {
   console.log(`App is running in ${process.env.NODE_ENV} mode on port ${PORT}`);
 });
