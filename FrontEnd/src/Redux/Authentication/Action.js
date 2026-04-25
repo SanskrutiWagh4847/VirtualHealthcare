@@ -29,40 +29,36 @@ export const login = (payload) => {
 
 
 
-export const Loginn =  (payload) => {
-    return   (dispatch) => {
-        axios.post('http://localhost:5000/api/users/login',payload)
-      
-        .then(res=> {
-    //   console.log("login data")
-          // console.log(res);
-          console.log(res.data.doc);
-          if(res.data.status === 201) {
-        
-          dispatch(login(res.data.doc))
-           console.log("Login succsessfull: "+res.data.role)
-          //  const notify = "Login succsessfull!!";        
-          //  dispatch(notification(notify));
-        //    window.alert("Login succsessfull: "+res.data.message)
-            
-         localStorage.setItem("user",JSON.stringify(res.data.doc))
-        //  console.log(res.data)
+export const Loginn = (payload) => {
+  return (dispatch) => {
+    axios.post(
+      'https://virtualhealthcare-1.onrender.com/api/users/login',
+      payload
+    )
+    .then(res => {
+      console.log(res.data);
+
+      if (res.data.status === 201) {
+        dispatch(login(res.data.doc));
+
+        localStorage.setItem("user", JSON.stringify(res.data.doc));
+
         window.location.reload(false);
-          }
-          else {
-            const notify = res.data.message 
-           dispatch(notification(notify));
-            // window.alert(res.data.message)
-          }
-        })
-        
-        };
+      } else {
+        dispatch(notification(res.data.message));
+      }
+    })
+    .catch(err => {
+      console.log("Login error:", err);
+      dispatch(notification("Server error or API not reachable"));
+    });
   };
+};
 
   export const getUser = (id) => {
-    return (dispatch) => {
-      axios
-        .get("http://localhost:5000/api/users/" + id)
+  return (dispatch) => {
+    axios
+      .get("https://virtualhealthcare-1.onrender.com/api/users/" + id)
         .then(function (res) {
           console.log(res);
           dispatch(login(res.data.doc));
