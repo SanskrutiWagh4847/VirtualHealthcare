@@ -1,79 +1,66 @@
-const Pregister = () => {
-  const errmsg = useSelector((state) => state.Patient.err);
-  const messagemodal = useSelector((state) => state.Patient.notification);
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-  const [show, setshow] = useState(false);
+import Layout from "../UI Components/Reused/Layout";
+import AlertBox from "../../Profiles/Admin/Components/AlertBox";
+
+import { Registers } from "../../Redux/Action/PatientAction/PatientAction";
+
+const schema = yup.object().shape({
+  name: yup.string().required(),
+  email: yup.string().required(),
+  phone: yup.string().required(),
+  password: yup.string().required(),
+  gender: yup.string().required(),
+  age: yup.number().required(),
+  location: yup.string().required(),
+  disease: yup.string(),
+});
+
+const Pregister = () => {
   const dispatch = useDispatch();
+  const notification = useSelector((state) => state.Patient.notification);
+
+  const [show, setShow] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+  } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (data) => {
-    const patient = {
-      name: data.name,
-      email: data.email,
-      password: data.password,
-      phone: data.phone,
-      age: data.age,
-      gender: data.gender,
-      role: "patient",
-      location: data.location,
-      disease: data.disease,
-      flag: true,
-    };
-
-    dispatch(Registers(patient));
-    setshow(true);
+    dispatch(Registers({ ...data, role: "patient", flag: true }));
+    setShow(true);
   };
 
   return (
-    <>
-      {show && (
-        <AlertBox
-          notifications={messagemodal}
-          onClick={() => setshow(false)}
-        />
-      )}
+    <Layout>
+      {show && <AlertBox notifications={notification} onClick={() => setShow(false)} />}
 
-      <Layout>
-        <form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
-          <input className="form-control inp" placeholder="Name" {...register("name")} />
-          <p className="text-danger">{errors.name?.message}</p>
+      <form onSubmit={handleSubmit(onSubmit)} className="row g-3">
 
-          <input className="form-control inp" placeholder="Email" {...register("email")} />
-          <p className="text-danger">{errors.email?.message}</p>
+        <input className="form-control inp" placeholder="Name" {...register("name")} />
+        <input className="form-control inp" placeholder="Email" {...register("email")} />
+        <input className="form-control inp" placeholder="Phone" {...register("phone")} />
+        <input className="form-control inp" placeholder="Password" {...register("password")} />
 
-          <input className="form-control inp" placeholder="Location" {...register("location")} />
-          <p className="text-danger">{errors.location?.message}</p>
+        <input className="form-control inp" placeholder="Age" {...register("age")} />
+        <input className="form-control inp" placeholder="Location" {...register("location")} />
+        <input className="form-control inp" placeholder="Disease" {...register("disease")} />
 
-          <input className="form-control inp" placeholder="Phone" {...register("phone")} />
-          <p className="text-danger">{errors.phone?.message}</p>
+        <select className="form-control inp" {...register("gender")}>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
 
-          <input className="form-control inp" placeholder="Age" {...register("age")} />
-          <p className="text-danger">{errors.age?.message}</p>
-
-          <select className="form-control inp" {...register("gender")}>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-          <p className="text-danger">{errors.gender?.message}</p>
-
-          <input className="form-control inp" placeholder="Disease" {...register("disease")} />
-
-          <input type="password" className="form-control inp" placeholder="Password" {...register("password")} />
-          <p className="text-danger">{errors.password?.message}</p>
-
-          <div className="text-center">
-            <input className="btn button mt-4" type="submit" />
-          </div>
-        </form>
-      </Layout>
-    </>
+        <button type="submit" className="btn button">Register</button>
+      </form>
+    </Layout>
   );
 };
+
 export default Pregister;
