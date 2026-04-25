@@ -62,3 +62,4 @@ const Dregister = () => {
     </Layout>
   );
 };
+export default Dregister;
