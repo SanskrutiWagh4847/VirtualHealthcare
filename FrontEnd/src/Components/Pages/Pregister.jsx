@@ -76,3 +76,4 @@ const Pregister = () => {
     </>
   );
 };
+export default Pregister;
